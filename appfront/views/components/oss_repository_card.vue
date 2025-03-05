@@ -63,7 +63,7 @@ const route = useRoute();
                         </ul>
                     </div>
 
-                    <div class="flex items-center gap-1" :title="repository.license.name">
+                    <div v-if="repository.license" class="flex items-center gap-1" :title="repository.license.name">
                         <o-icon class="w-3 h-3 text-muted" name="heroicons.outline.scale" />
                         <span class="uppercase text-2xs text-muted tracking-widest" aria-hidden="true">
                             {{ repository.license.key }}

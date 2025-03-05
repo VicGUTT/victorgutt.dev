@@ -30,7 +30,7 @@ export type OssRepositoryIndex = {
     languages: OssRepository['languages'];
     topics: OssRepository['topics'];
     archived: OssRepository['archived'];
-    license: OssRepository['license'];
+    license: OssRepository['license'] | null;
     created_at: OssRepository['created_at'];
 
     latest_release: OssReleaseJoint;
