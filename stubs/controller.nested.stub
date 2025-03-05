@@ -1,0 +1,69 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use {{ namespacedModel }};
+use {{ namespacedParentModel }};
+
+final class {{ class }}
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index({{ parentModel }} ${{ parentModelVariable }}): Response
+    {
+        return new Response();
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create({{ parentModel }} ${{ parentModelVariable }}): Response
+    {
+        return new Response();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }}): Response
+    {
+        return new Response();
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
+    {
+        return new Response();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
+    {
+        return new Response();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
+    {
+        return new Response();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
+    {
+        return new Response();
+    }
+}

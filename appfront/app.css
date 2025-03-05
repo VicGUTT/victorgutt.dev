@@ -1,0 +1,21 @@
+/* Setup
+------------------------------------------------*/
+
+@import 'tailwindcss' source('./views');
+
+@import '~/node_modules/@vicgutt/tailwindcss-opinionated-preset/src/index.css';
+
+@import '@/css/setup/base.css';
+@import '@/css/setup/colors.css';
+@import '@/css/setup/animations.css';
+@import '@/css/setup/variants.css';
+@import '@/css/components/card.css';
+@import '@/css/components/rendered-markdown-content.css';
+@import '@/css/components/rendered-markdown-toc.css';
+@import '@/css/components/helpers.css';
+
+/** TODO\: Apply only during dev */
+/* @custom-variant hover (&:hover); */
+
+/** TODO\: Apply only during dev */
+/* @custom-variant print (&:where(.print *)); */

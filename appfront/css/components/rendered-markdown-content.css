@@ -1,0 +1,62 @@
+@layer components {
+    .rendered-markdown-content {
+        :where(.header-anchor-wrapper) {
+            @apply relative w-fit flex items-center;
+
+            &:hover .header-anchor,
+            &:focus-within .header-anchor {
+                @apply opacity-100;
+            }
+
+            :where(.header-anchor) {
+                @apply absolute inset-0 -ml-4.5 self-center translate-y-[35%] opacity-0 transition-opacity lg:-ml-8 xl:-ml-6 2xl:-ml-8;
+            }
+
+            :where(a:not(.header-anchor)) {
+                @apply relative z-1;
+            }
+        }
+    }
+}
+
+@layer utilities {
+    .rendered-markdown-content {
+        &:where(.prose-invert) {
+            /**
+             * Hack forcing the `--text-muted` CSS variable to be present.
+             * Should Improve this at some point!
+             */
+            @apply text-muted;
+            color: var(--tw-prose-invert-body);
+
+            --color-gray-900--faded: color-mix(in oklab, var(--color-gray-900) 70%, transparent);
+
+            --tw-prose-invert-body: var(--app-text-color);
+            --tw-prose-invert-headings: var(--app-text-color);
+            --tw-prose-invert-lead: var(--text-muted);
+            --tw-prose-invert-links: var(--app-text-color);
+            --tw-prose-invert-bold: var(--app-text-color);
+            --tw-prose-invert-counters: var(--text-muted);
+            --tw-prose-invert-bullets: var(--color-gray-600);
+            --tw-prose-invert-hr: var(--color-gray-900--faded);
+            --tw-prose-invert-quotes: var(--app-text-color);
+            --tw-prose-invert-quote-borders: var(--color-gray-900--faded);
+            --tw-prose-invert-captions: var(--text-muted);
+            --tw-prose-invert-kbd: var(--app-text-color);
+            --tw-prose-invert-kbd-shadows: 255 255 255;
+            --tw-prose-invert-code: var(--app-text-color);
+            --tw-prose-invert-pre-code: var(--app-text-color);
+            --tw-prose-invert-pre-bg: var(--bg-surface-3);
+            --tw-prose-invert-th-borders: var(--color-gray-600);
+            --tw-prose-invert-td-borders: var(--color-gray-900--faded);
+        }
+
+        &:where(.prose) :where(.header-anchor) {
+            @apply no-underline text-(--text-muted);
+        }
+
+        :where(pre.shiki.material-theme-ocean) {
+            @apply rounded-2xl border border-(--color-gray-900--faded) bg-(--tw-prose-invert-pre-bg)!;
+        }
+    }
+}

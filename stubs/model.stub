@@ -1,0 +1,83 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+final class {{ class }} extends Model
+{
+    use HasFactory;
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array<string>|bool
+     */
+    protected $guarded = [
+        'id',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'id' => 'int',
+    ];
+
+    /* Relationships
+    ------------------------------------------------*/
+
+    /**
+     * ...
+     */
+    public function relationName(): void
+    {
+        //
+    }
+
+    /* Scopes
+    ------------------------------------------------*/
+
+    /**
+     * ...
+     *
+     * @param Builder<static> $query
+     * @return Builder<static>
+     */
+    public function scopeName(Builder $query): Builder
+    {
+        return $query;
+    }
+
+    /* Accessors & Mutators
+    ------------------------------------------------*/
+
+    /**
+     * ...
+     */
+    protected function attributeName(): Attribute
+    {
+        return Attribute::make(
+            get: static fn (string $value): string => ucfirst($value),
+            set: static fn (string $value): string => mb_strtolower($value),
+        )->shouldCache();
+    }
+
+    /* Methods
+    ------------------------------------------------*/
+
+    /**
+     * ...
+     */
+    private function methodName(): void
+    {
+        //
+    }
+}

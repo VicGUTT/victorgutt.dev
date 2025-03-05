@@ -1,0 +1,45 @@
+@layer components {
+    /**
+     * Texts.
+     */
+    .text-gradient {
+        --from-color: currentColor;
+        --to-color: color-mix(in oklab, var(--color-gray-900) 50%, transparent);
+
+        background: linear-gradient(to right bottom, var(--from-color) 30%, var(--to-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: unset;
+    }
+
+    /**
+     * Backgrounds.
+     */
+    .bg-dots {
+        --bg-dots-gradient-color: var(--color-gray-200);
+        --bg-dots-gradient-size: 1px;
+        --bg-dots-size: 24px;
+        --bg-dots-animation: var(--animate-move_bg_position_to_right);
+
+        text-overflow: clip;
+        background-image: radial-gradient(
+            var(--bg-dots-gradient-color) var(--bg-dots-gradient-size),
+            transparent var(--bg-dots-gradient-size)
+        );
+        background-size: var(--bg-dots-size) var(--bg-dots-size);
+        background-repeat: repeat;
+        animation: var(--bg-dots-animation);
+
+        &:where(.dark &) {
+            --bg-dots-gradient-color: var(--color-gray-900);
+        }
+    }
+
+    .bg-radial-mask {
+        --bg-radial-mask-color: var(--app-bg-color);
+
+        mask-image: radial-gradient(ellipse at center, transparent, var(--app-bg-color) 80%);
+        background-color: var(--bg-radial-mask-color);
+    }
+}

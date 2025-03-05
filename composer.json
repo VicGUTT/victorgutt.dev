@@ -1,0 +1,107 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "vicgutt/victorguttdev",
+    "type": "project",
+    "description": "Victor Gutt's developer website",
+    "keywords": [
+        "laravel",
+        "vuejs",
+        "typescript",
+        "tailwindcss",
+        "developer",
+        "designer"
+    ],
+    "license": "proprietary",
+    "require": {
+        "php": "^8.4",
+        "honeystone/laravel-seo": "^2.0",
+        "inertiajs/inertia-laravel": "^2.0",
+        "laravel-lang/common": "^6.6",
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10.1",
+        "spatie/browsershot": "^5.0",
+        "tightenco/ziggy": "^2.5",
+        "vicgutt/php-enhanced-enum": "^0.1.0"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.5",
+        "fakerphp/faker": "^1.24",
+        "larastan/larastan": "^3.1",
+        "laravel/pail": "^1.2.2",
+        "laravel/pint": "^1.21",
+        "laravel/sail": "^1.41",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "pestphp/pest": "^3.7",
+        "pestphp/pest-plugin-laravel": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Domain\\": "appdomain/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "bootstrap/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/pest"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "lint": "composer analyse",
+        "test": "vendor/bin/pest --test-directory=tests/pest",
+        "test:stop-on-defect": "vendor/bin/pest --test-directory=tests/pest --stop-on-defect",
+        "test:coverage": "vendor/bin/pest --test-directory=tests/pest --coverage --min=90",
+        "test:[filtered]": "vendor/bin/pest --test-directory=tests/pest tests/pest/Feature/Http/ExampleTest.php",
+        "format": "vendor/bin/pint --test",
+        "format:fix": "vendor/bin/pint",
+        "fix": "composer format:fix",
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan stub:publish",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta",
+            "@php artisan lang:update"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "homepage": "https://github.com/vicgutt/victorguttdev"
+}

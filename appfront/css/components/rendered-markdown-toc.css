@@ -1,0 +1,20 @@
+@layer components {
+    .rendered-markdown-toc {
+        :where(ol) {
+            @apply flex flex-col gap-2.5 text-muted border-l border-[color-mix(in__oklch,__var(--app-text-color)__30%,__var(--app-bg-color))];
+
+            &:where(:not(:first-child)) a {
+                @apply pl-10;
+            }
+            &:where(:empty) {
+                @apply hidden;
+            }
+        }
+        :where(li) {
+            @apply -ml-px flex flex-col items-start gap-2.5;
+        }
+        :where(a) {
+            @apply inline-block border-l border-transparent text-sm text-muted hover:border-current/40 hover:text-app aria-[current]:border-current aria-[current]:text-app pl-5;
+        }
+    }
+}

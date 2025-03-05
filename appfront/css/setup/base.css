@@ -1,0 +1,37 @@
+@layer base {
+    :where(:root) {
+        scroll-padding-top: 6rem;
+    }
+
+    @font-face {
+        font-family: 'Mulish';
+        font-display: swap; /* auto | block | swap | fallback | optional */
+        src:
+            /*
+                local('Muli'),
+                local('muli'),
+                local('Mulish'),
+                local('mulish'),
+            */
+            url('~/public/fonts/mulish.ttf') format('truetype supports variations'),
+            url('~/public/fonts/mulish.ttf') format('truetype-variations');
+        font-weight: 200 1000;
+        font-stretch: 25% 151%;
+    }
+
+    /**
+    * View Transitions
+    */
+    @media (prefers-reduced-motion: no-preference) {
+        @view-transition {
+            navigation: auto;
+        }
+    }
+
+    /* :where(:root) {
+        view-transition-name: none;
+    }
+    :where(#app) {
+        view-transition-name: root;
+    } */
+}

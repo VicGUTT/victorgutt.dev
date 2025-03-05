@@ -1,0 +1,24 @@
+*.vic
+_ide_helper_models.php
+_ide_helper.php
+.phpstorm.meta.php
+package-lock.json
+composer.lock
+/.husky
+/.vic
+# /.vscode
+/appfront/vendor
+/appfront/assets
+/appfront/views/components/icon-sprite.vue
+/bootstrap/cache
+/bootstrap/ssr
+/config
+# /database
+/node_modules
+/public
+/storage
+/stubs
+/tests/playwright/.report
+/tests/playwright/.test-results
+/tests/vitest/.coverage
+/vendor

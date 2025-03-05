@@ -1,0 +1,29 @@
+@layer components {
+    .card {
+        @apply relative p-4 border transition-colors;
+
+        &:where(.card-default) {
+            @apply border-gray-900/60 bg-surface-3 rounded-3xl
+                has-[.card-link:hover]:border-gray-800
+                has-[.card-link:focus-visible]:border-(--accent-color);
+        }
+
+        &:where(.card-wrapped) {
+            @apply bg-surface-1 border-gray-900/60 rounded-lg
+                has-[.card-link:hover]:border-gray-800
+                has-[.card-link:focus-visible]:border-(--accent-color);
+
+            &:has(.card-link:hover) .card-design-wrapper {
+                @apply border-gray-800/60 bg-gray-800/60;
+            }
+
+            &:has(.card-link:focus-visible) .card-design-wrapper {
+                @apply border-(--accent-color)/60 bg-(--accent-color)/30;
+            }
+
+            & > :where(.card-design-wrapper) {
+                @apply absolute -inset-2 bg-surface-3 transition-colors border border-gray-900/60 rounded-xl opacity-40 -z-1;
+            }
+        }
+    }
+}

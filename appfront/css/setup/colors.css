@@ -1,0 +1,24 @@
+/**
+ * @see https://github.com/VicGUTT/tailwindcss-opinionated-preset/blob/main/src/setup/colors.css
+ * @see https://tailwindcss.com/docs/colors#using-a-custom-palette
+ */
+@theme {
+    --color-brand1-base: oklch(0.795 0.184 86.047); /* --color-yellow-500 */
+    --color-brand2-*: initial;
+    --color-brand3-*: initial;
+
+    --color-gray-base: oklch(0.553 0.013 58.071); /* --color-stone-500 */
+}
+
+/**
+ * @see https://github.com/VicGUTT/tailwindcss-opinionated-preset/blob/main/src/base/opinionated.css
+ */
+@layer base {
+    :where(:root) {
+        --accent-color: var(--color-accent-400);
+    }
+
+    :where(:root.dark) {
+        --accent-color: var(--color-accent-400);
+    }
+}

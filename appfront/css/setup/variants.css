@@ -1,0 +1,8 @@
+/**
+ * @see https://tailwindcss.com/docs/functions-and-directives#variant-directive
+ */
+
+@custom-variant nojs (&:where(.no-js *));
+
+@custom-variant loaded (&:where(.loaded *));
+@custom-variant mounted (&:where(.mounted *));

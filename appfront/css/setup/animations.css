@@ -1,0 +1,80 @@
+/**
+ * @see https://tailwindcss.com/docs/animation
+ */
+@theme {
+    /**
+     * Slide and fade animations.
+     * Used for components like: dropdown.
+     *
+     * Thanks to: https://reka-ui.com/docs/components/dropdown-menu#dropdownmenu
+     */
+
+    --animate-slide_down_and_fade: slide_down_and_fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide_left_and_fade: slide_left_and_fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide_up_and_fade: slide_up_and_fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide_right_and_fade: slide_right_and_fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    @keyframes slide_down_and_fade {
+        from {
+            opacity: 0;
+            transform: translateY(-2px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide_left_and_fade {
+        from {
+            opacity: 0;
+            transform: translateX(2px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes slide_up_and_fade {
+        from {
+            opacity: 0;
+            transform: translateY(2px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slide_right_and_fade {
+        from {
+            opacity: 0;
+            transform: translateX(-2px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /**
+     * Move background position animations.
+     *
+     * Thanks to:
+     *    - https://inspira-ui.com/components/backgrounds/pattern-background
+     *    - https://github.com/unovue/inspira-ui/blob/97f287b05422f7be0747598fcb1dc436300de98c/assets/css/tailwind.css
+     *    - https://github.com/unovue/inspira-ui/blob/97f287b05422f7be0747598fcb1dc436300de98c/components/content/inspira/ui/pattern-background/PatternBackground.vue
+     *    - https://github.com/unovue/inspira-ui/blob/97f287b05422f7be0747598fcb1dc436300de98c/components/content/inspira/ui/pattern-background/index.ts
+     */
+
+    --animate-move_bg_position_to_right__duration: 60s;
+    --animate-move_bg_position_to_right: move_bg_position_to_right var(--animate-move_bg_position_to_right__duration)
+        linear infinite;
+
+    @keyframes move_bg_position_to_right {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 100% 0;
+        }
+    }
+}

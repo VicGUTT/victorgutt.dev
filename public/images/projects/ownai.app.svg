@@ -1,0 +1,49 @@
+<svg
+    class="logo"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 600 600"
+>
+    <style>
+        .logo .wrapper {
+            fill: var(--logo-wrapper-bg-color, #f4f5f8);
+        }
+        .logo .icon {
+            fill: url(#icon-linear-gradient);
+            filter: url(#icon-drop-shadow);
+        }
+    </style>
+
+    <defs>
+        <linearGradient
+            id="icon-linear-gradient"
+            x1="201.59"
+            y1="470.44"
+            x2="401.8"
+            y2="123.68"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop offset="0" stop-color="#222326" />
+            <stop offset=".28" stop-color="#25262a" />
+            <stop offset=".58" stop-color="#2e3136" />
+            <stop offset=".88" stop-color="#3e434b" />
+            <stop offset="1" stop-color="#474d56" />
+        </linearGradient>
+        <filter id="icon-drop-shadow" filterUnits="userSpaceOnUse">
+            <feOffset dx="-2" dy="-1" />
+            <feGaussianBlur result="blur" stdDeviation="2" />
+            <feFlood flood-color="#4d515b" flood-opacity=".3" />
+            <feComposite in2="blur" operator="in" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+    </defs>
+    <g id="application_icon">
+         <!-- rx="103.17" ry="103.17" -->
+        <rect id="wrapper" class="wrapper" width="600" height="600" rx="99999" ry="99999" />
+        <path
+            id="icon"
+            class="icon"
+            d="m500,300c0,110.46-89.54,200-200,200-22.24,0-43.63-3.63-63.62-10.33,18.67-53.87,51.94-75.32,123.61-88.16,14.26-2.56,14.26-23,0-25.55-83.69-14.99-115.01-41.72-131.88-118.08-3.84-17.37-28.57-17.37-32.4,0-13.27,60.08-35.5,89.43-85.12,106.51-6.87-20.2-10.59-41.86-10.59-64.39,0-110.46,89.54-200,200-200s200,89.54,200,200Zm-370.04,98.88c44.39,9.81,61.99,27.41,71.8,71.8,2.4,10.88,17.89,10.88,20.29,0,11.07-50.11,32.08-66.09,90.35-75.25,7.65-1.2,7.65-12.2,0-13.4-58.27-9.16-79.28-25.13-90.35-75.25-2.4-10.88-17.89-10.88-20.29,0-9.81,44.39-27.41,61.99-71.8,71.8-10.88,2.4-10.88,17.89,0,20.29Z"
+        />
+    </g>
+</svg>
