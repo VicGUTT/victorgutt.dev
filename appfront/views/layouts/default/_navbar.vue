@@ -25,7 +25,7 @@ const locales = app().getSupportedLocales();
 /* Location
 ------------------------------------------------*/
 
-const timezoneKey = 'Europe/Paris';
+const timezoneKey = 'Pacific/Tahiti';
 
 const timeFormatter = computed(() => {
     return new Intl.DateTimeFormat(currentLocale.value, {
@@ -121,7 +121,7 @@ watch(currentLocale, () => {
                     role="list"
                 >
                     <span class="text-xs text-muted font-semibold">
-                        {{ $t('locations.corsica') }}, {{ $t('locations.france') }}
+                        {{ $t('locations.place') }}, {{ $t('locations.country') }}
                     </span>
                     <span class="text-xs font-semibold text-right">
                         <span>{{ time }}</span> <span v-if="utc" class="text-muted text-2xs">({{ utc }})</span>
@@ -140,8 +140,6 @@ watch(currentLocale, () => {
                             ]"
                             :href="page.url.replace(`/${currentLocale}`, `/${locale}`)"
                             :title="$t(`languages.${locale}.label`)"
-                            cache-for="60m"
-                            prefetch
                             preserve-scroll
                         >
                             {{ locale.toUpperCase() }}

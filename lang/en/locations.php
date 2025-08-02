@@ -3,6 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'corsica' => 'Corsica',
-    'france' => 'France',
+    'place' => 'Tahiti',
+    'country' => 'French Polynesia',
 ];

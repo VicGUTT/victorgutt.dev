@@ -8,7 +8,7 @@ return [
     ],
     'sections' => [
         'about' => [
-            'description' => "Hey ✌!  I'm a Haitian-German developer currently residing in the beautiful island of Corsica, France.
+            'description' => "Hey ✌! I'm a Haitian-German developer currently residing in the paradise island of Tahiti in French Polynesia.
                 As a Full-Stack Web Developer & Web Designer with 8+ years of experience, I bring together pragmatism and creativity to craft user-friendly web applications.
                 Outside of work, you'll catch me dabbling in entrepreneurship, contributing to Open Source projects, or trying to make others laugh with my jokes 😎.",
         ],

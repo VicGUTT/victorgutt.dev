@@ -28,12 +28,19 @@ const animateable = computed(() => preferredMotion.value === 'no-preference');
                 {{ $t('pages.home.sections.about.description') }}
             </p>
 
-            <o-card class="p-0 rounded-3xl overflow-clip">
-                <img
-                    class="m-0! rounded-[1.25rem] transition scale-150 hover:scale-99"
-                    src="/images/misc/corsica_map.webp"
-                    alt="corsica_map.png"
-                />
+            <o-card class="group p-0 rounded-3xl overflow-clip aspect-[16/10]">
+                <div class="relative size-full transition scale-150 group-hover:scale-99">
+                    <img
+                        class="m-0! absolute inset-0 size-full object-cover rounded-[1.25rem] transition group-hover:opacity-0"
+                        src="/images/misc/tahiti_zoomed_in_map.webp"
+                        alt=""
+                    />
+                    <img
+                        class="m-0! absolute inset-0 size-full object-cover rounded-[1.25rem] transition-[opacity,visibility] opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+                        src="/images/misc/tahiti_zoomed_out_map.webp"
+                        alt=""
+                    />
+                </div>
             </o-card>
         </div>
     </o-section>

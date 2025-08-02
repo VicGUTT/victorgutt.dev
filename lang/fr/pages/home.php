@@ -8,7 +8,7 @@ return [
     ],
     'sections' => [
         'about' => [
-            'description' => "Hey ✌!  Je suis un développeur haïtiano-allemand vivant actuellement sur l'île de beauté (Corse).
+            'description' => "Hey ✌!  Je suis un développeur haïtiano-allemand vivant actuellement sur l'île paradisiaque de Tahiti en Polynésie française.
             En tant que Développeur Web Full-Stack et Web Designer avec 8+ ans d'expérience, je mélange pragmatisme et créativité pour créer des applications web agréable aux utilisateurs.
             En dehors du travail, vous me trouverez en train de tenter l'entrepreneuriat, contribuer à des projets open-source ou en train de faire rire les autres avec mes blagues 😎.",
         ],
