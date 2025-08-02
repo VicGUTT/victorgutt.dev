@@ -16,12 +16,12 @@ enum LocaleEnum: string implements EnumerableContract
 
     public static function default(): static
     {
-        return static::EN;
+        return static::from(config('app.locale'));
     }
 
     public static function fallback(): static
     {
-        return static::EN;
+        return static::from(config('app.fallback_locale'));
     }
 
     public static function isSupported(string $value): bool

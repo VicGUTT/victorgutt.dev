@@ -81,9 +81,9 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', LocaleEnum::default()->value),
+    'locale' => env('APP_LOCALE', LocaleEnum::EN->value),
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', LocaleEnum::fallback()->value),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', LocaleEnum::EN->value),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
